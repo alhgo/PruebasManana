@@ -26,7 +26,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Impacto()
     {
-        impact = Random.Range(10f, 200f);
+        impact = Random.Range(10f, 80f);
 
         if(impact >= energy)
         {
@@ -41,12 +41,16 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 message = "Has perdido una vida. Te quedan " + lifes;
                 energy = 100f;
+                Invoke("Impacto", 2f);
+
             }
 
         }
         else
         {
             energy -= impact;
+            message = "Cuidado! Solo te queda " + energy + " de escudo";
+            Invoke("Impacto", 2f);
         }
 
         print(message);
