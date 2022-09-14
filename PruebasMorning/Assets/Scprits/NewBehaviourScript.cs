@@ -19,8 +19,18 @@ public class NewBehaviourScript : MonoBehaviour
         energy = 100f;
         alive = true;
 
-        Impacto();
+        //Impacto();
     }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && alive == true)
+        {
+            Impacto();
+        }
+    }
+
+
 
     void Impacto()
     {
@@ -49,7 +59,7 @@ public class NewBehaviourScript : MonoBehaviour
 
                 //Restablezco la energía
                 energy = 100f;
-                Invoke("Impacto", 2f);
+                //Invoke("Impacto", 2f);
 
             }
 
@@ -58,7 +68,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             energy -= impact;
             message = "Cuidado! Solo te queda " + energy + " de escudo";
-            Invoke("Impacto", 2f);
+            //Invoke("Impacto", 2f);
         }
 
         print(message);
