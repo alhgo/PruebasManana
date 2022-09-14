@@ -6,7 +6,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
 
     [SerializeField] int lifes;
-    [SerializeField] float energy;
+    [SerializeField] float energy = 200f;
     float impact;
     bool alive;
     string message;
@@ -16,12 +16,10 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lifes = 3;
         energy = 100f;
         alive = true;
 
         Impacto();
-
     }
 
     void Impacto()
@@ -40,6 +38,16 @@ public class NewBehaviourScript : MonoBehaviour
             else
             {
                 message = "Has perdido una vida. Te quedan " + lifes;
+                //int n = lifes;
+
+                for (int n = lifes; n > 0; n--)
+                {
+                    print("Estoy animando la vida " + n);
+                }
+
+
+
+                //Restablezco la energía
                 energy = 100f;
                 Invoke("Impacto", 2f);
 
@@ -54,7 +62,34 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
         print(message);
+
+        /*
+        //BUCLES
+        int n = 0;
+
+        while (n < 10)
+        {
+            n++;
+        }
+        
+
+        for(int n = 4; n > 0; n--)
+        {
+
+        }
+        */
+
+
+
+
+
     }
+
+
+
+
+
+
 
 
 
