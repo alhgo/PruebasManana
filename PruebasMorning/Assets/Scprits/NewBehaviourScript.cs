@@ -8,7 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] int lifes;
     [SerializeField] float energy = 200f;
     float impact;
-    bool alive;
+    public bool alive;
     string message;
 
 
@@ -32,7 +32,7 @@ public class NewBehaviourScript : MonoBehaviour
 
 
 
-    void Impacto()
+    public void Impacto()
     {
         impact = Random.Range(10f, 80f);
 
